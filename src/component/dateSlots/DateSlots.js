@@ -10,7 +10,7 @@ import Slots from "../slots/Slots";
 const DateSlots = ({ doctorInfo, availableTime }) => {
   return (
     <div>
-      <p>Schedule</p>
+      <p className="font-bold">Schedule</p>
       <div className="flex flex-row gap-2 ">
         <Swiper
           slidesPerView={3}
