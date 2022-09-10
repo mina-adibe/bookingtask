@@ -29,6 +29,17 @@ module.exports = {
       md: "1.125rem", // 18px
       lg: "1.563rem", //25px
     },
+    spacing: {
+      1: "8px",
+      2: "9px",
+    },
+    borderRadius: {
+      base: "0.625rem" /* 10px */,
+      md: "0.875rem" /* 14px */,
+    },
+    borderWidth: {
+      1: "1px",
+    },
     extend: {
       boxShadow: {
         btn: "0px 1px 4px rgba(0, 0, 0, 0.161)",
