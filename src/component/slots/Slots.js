@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable prettier/prettier */
+
 import React from "react";
 import PropTypes from "prop-types";
 
-// eslint-disable-next-line no-unused-vars
-const Slots = ({ children }) => {
+const Slots = ({ children, ...rest }) => {
   return (
     <div
       style={{
@@ -13,7 +13,8 @@ const Slots = ({ children }) => {
         padding: "4px",
         margin: "5px",
         cursor: "pointer",
-      }}>
+      }}
+      {...rest}>
       {children}
     </div>
   );
@@ -22,5 +23,6 @@ const Slots = ({ children }) => {
 export default Slots;
 
 Slots.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node,
+  rest: PropTypes.array,
 };

@@ -14,7 +14,11 @@ const TimeSlots = ({ availableSlots, unavailableSlots }) => {
       </div>
       <div className=" flex flex-row gap-2  flex-wrap	mt-[90px]">
         {unavailableSlots.map((elm, index) => {
-          return <Slots key={index}>{elm}</Slots>;
+          return (
+            <Slots className="opacity-10" key={index}>
+              {elm}
+            </Slots>
+          );
         })}
       </div>
     </div>

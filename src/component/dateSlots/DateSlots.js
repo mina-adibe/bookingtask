@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 import PropTypes from "prop-types";
 import { Navigation } from "swiper";
@@ -8,12 +9,13 @@ import "swiper/css/navigation";
 import Slots from "../slots/Slots";
 
 const DateSlots = ({ doctorInfo, availableTime }) => {
+  console.log(doctorInfo);
   return (
     <div>
       <p className="font-bold">Schedule</p>
       <div className="flex flex-row gap-2 ">
         <Swiper
-          slidesPerView={3}
+          slidesPerView={5}
           centeredSlides={true}
           navigation={true}
           modules={[Navigation]}
@@ -25,7 +27,12 @@ const DateSlots = ({ doctorInfo, availableTime }) => {
                   key={dateSlot.availability.date}
                   onClick={() => availableTime(dateSlot)}>
                   <Slots>
-                    {dateSlot.availability.date + dateSlot.availability.day}
+                    <div className="flex flex-col">
+                      <p className="font-extrabold">
+                        {dateSlot.availability.date.substring(0, 2)}
+                      </p>
+                      <p>{dateSlot.availability.day.substring(0, 3)}</p>
+                    </div>
                   </Slots>
                 </SwiperSlide>
               );
